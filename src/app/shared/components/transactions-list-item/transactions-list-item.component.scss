@@ -91,3 +91,30 @@
   }
 }
 
+@media screen and (max-width: $sm){
+  .col-date {
+    font-size: 10px;
+    width: 56px;
+  }
+
+  .col-img {
+    display: none;
+  }
+
+  .col-content-right {
+    width: calc(100% - 56px);
+
+    .col-merchant {
+      font-size: 11px;
+      padding: 0 .5rem;
+    }
+
+    .col-amount {
+      font-size: 11px;
+    }
+  }
+
+  .color-box {
+    width: 6px;
+  }
+}

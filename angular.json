@@ -33,7 +33,6 @@
               "src/styles.scss",
               "src/assets/styles/index.scss",
               "src/assets/styles/colours.scss",
-              "src/assets/styles/fonts.scss",
               "src/assets/styles/breakpoints.scss"
             ],
             "scripts": []

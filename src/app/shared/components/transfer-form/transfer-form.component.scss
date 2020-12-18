@@ -33,3 +33,13 @@
     font-size: 13px;
   }
 }
+
+@media screen and (max-width: $sm){
+  .form__label {
+    font-size: 12px;
+  }
+
+  .button {
+    font-size: 11px;
+  }
+}

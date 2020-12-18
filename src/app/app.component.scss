@@ -41,3 +41,8 @@
   }
 }
 
+@media screen and (max-width: $sm){
+  .content-outlet {
+    padding: .5rem;
+  }
+}

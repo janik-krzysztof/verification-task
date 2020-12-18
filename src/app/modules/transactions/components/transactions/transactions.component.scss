@@ -55,3 +55,28 @@
     font-size: 16px;
   }
 }
+
+@media screen and (max-width: $md){
+  .container {
+    flex-direction: column;
+  }
+
+  .transfer {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .transfers-list {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: $sm){
+  .list-container {
+    padding: 0;
+  }
+
+  .box-navbar {
+    font-size: 14px;
+  }
+}
