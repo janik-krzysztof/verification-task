@@ -1,0 +1,35 @@
+@import "../../../../assets/styles";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 2rem 1rem;
+}
+
+.form__label {
+  font-family: Kanit-Medium;
+}
+
+.button-container {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  width: 65%;
+  background-color: $submitButtonBg;
+  color: $submitButton;
+}
+
+@media screen and (max-width: $lg) {
+  .form__label {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 13px;
+  }
+}

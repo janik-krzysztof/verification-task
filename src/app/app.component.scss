@@ -29,3 +29,15 @@
 .content-outlet {
   padding: 3rem 6rem;
 }
+
+@media screen and (max-width: $lg){
+  .content-outlet {
+    padding: 1rem 2rem;
+  }
+
+  .navbar {
+    padding: .5rem 2rem;
+    height: 64px;
+  }
+}
+

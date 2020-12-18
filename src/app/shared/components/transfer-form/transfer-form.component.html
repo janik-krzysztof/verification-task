@@ -1,0 +1,30 @@
+<form [formGroup]="fg" class="form" (ngSubmit)="onSubmit()" #form="ngForm">
+  <mat-label class="form__label">{{'transfer.form.fromAccount' | translate}}</mat-label>
+  <mat-form-field>
+    <input matInput placeholder="" formControlName="accountFrom">
+  </mat-form-field>
+  <mat-label class="form__label">{{'transfer.form.toAccount' | translate}}</mat-label>
+  <mat-form-field>
+    <input matInput placeholder="" formControlName="accountTo">
+    <mat-error *ngIf="getFormControl('accountTo').errors">
+      {{getFormControl('accountTo').errors | formError}}
+    </mat-error>
+  </mat-form-field>
+  <ng-container formGroupName="amountCurrency">
+    <mat-label class="form__label">{{'transfer.form.amount' | translate}}</mat-label>
+    <mat-form-field>
+      <span matPrefix>{{currentCurrency?.currencySymbol}} &nbsp;</span>
+      <input matInput
+             placeholder=""
+             formControlName="amount">
+      <mat-error *ngIf="getFormControl('amountCurrency').get('amount').errors">
+        {{getFormControl('amountCurrency').get('amount').errors | formError}}
+      </mat-error>
+    </mat-form-field>
+  </ng-container>
+
+
+  <div class="button-container">
+    <button mat-flat-button class="button">{{'transfer.form.submit' | translate}}</button>
+  </div>
+</form>

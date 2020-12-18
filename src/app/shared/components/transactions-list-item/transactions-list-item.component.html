@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="color-box" [ngStyle]="{'background-color': transactionItem.categoryCode}">
+
+  </div>
+
+  <div class="content">
+    <div class="col-date">
+      <span>{{transactionItem.dates.valueDate | date: 'MMM. dd'}}</span>
+    </div>
+    <div class="col-img">
+      <ng-container *ngIf="transactionItem.merchant.name | hasImg; else emptyLogo">
+        <img class="img" src="{{transactionItem.merchant.name | imgPath}}">
+      </ng-container>
+      <ng-template #emptyLogo>
+        <div class="img"></div>
+      </ng-template>
+    </div>
+    <div class="col-content-right">
+      <div class="col-merchant">
+        <span class="col-merchant__name">{{transactionItem.merchant.name}}</span>
+        <span class="col-merchant__type">{{transactionItem.transaction.type}}</span>
+      </div>
+      <div class="col-amount">
+        -{{transactionItem.transaction.amountCurrency.amount | currency: (transactionItem.transaction.amountCurrency.currencyCode | currencySymbol)}}
+      </div>
+    </div>
+  </div>
+
+</div>
