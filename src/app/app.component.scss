@@ -1,0 +1,31 @@
+@import "src/assets/styles/index.scss";
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url('src/assets/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-bottom: 3px solid $navbarBorder;
+  width: 100%;
+  padding: 1rem 6rem;
+  box-sizing: border-box;
+  height: 80px;
+}
+
+.navbar__logo {
+  max-width: 30%;
+}
+
+.content-outlet {
+  padding: 3rem 6rem;
+}

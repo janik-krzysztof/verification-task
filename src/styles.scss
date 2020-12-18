@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/index";
+
+@font-face {
+  font-family: Kanit-ExtraLight;
+  src: url("assets/fonts/Kanit-ExtraLight.ttf") format('opentype');
+}
+
+@font-face {
+  font-family: Kanit-Light;
+  src: url('assets/fonts/Kanit-Light.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: Kanit-Medium;
+  src: url('assets/fonts/Kanit-Medium.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: Kanit-Thin;
+  src: url('assets/fonts/Kanit-Thin.ttf') format('opentype');
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Kanit-Light, "Helvetica Neue", sans-serif; }
+
+.mat-dialog-container {
+  padding: 0 !important;
+}

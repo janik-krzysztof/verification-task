@@ -1,0 +1,22 @@
+@import "src/assets/styles";
+
+.header {
+  background-color: $boxNavbar;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid rgb(31, 141, 159);
+  border-top: 1px solid rgb(31, 141, 159);
+  padding: 0 1rem;
+  font-size: 18px;
+  height: 42px;
+  color: $boxLabel;
+}
+
+.content {
+  padding: 2rem 1rem;
+  height: calc(100% - 170px)
+}
+
+.field {
+  width: 100%;
+}

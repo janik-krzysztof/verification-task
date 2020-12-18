@@ -28,7 +28,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/normalize.css/normalize.css",
+              "src/styles.scss",
+              "src/assets/styles/index.scss",
+              "src/assets/styles/colours.scss",
+              "src/assets/styles/fonts.scss"
             ],
             "scripts": []
           },
@@ -92,6 +97,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +129,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "verification-task"
 }

@@ -1,0 +1,46 @@
+@import "src/assets/styles/index.scss";
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.transfer {
+  width: 20%;
+  min-width: 360px;
+  margin-right: 2rem;
+}
+
+.transfers-list {
+  width: 80%;
+}
+
+.box-navbar {
+  background-color: $boxNavbar;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid rgb(31, 141, 159);
+  border-top: 1px solid rgb(31, 141, 159);
+  padding: 0 1rem;
+  font-size: 18px;
+}
+
+.form-navbar {
+  height: 42px;
+}
+
+.list-navbar {
+  height: 56px;
+}
+
+.form-navbar__label {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: $boxLabel;
+}
+
+.list-container {
+  padding: 1rem;
+  background-color: $white;
+}

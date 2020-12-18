@@ -1,0 +1,22 @@
+<header class="header">
+  <img src="assets/icons/arrows.png" alt="arrows">
+  <span>{{'dialog.transferPreview' | translate}}</span>
+</header>
+<section class="content">
+  <mat-form-field class="field">
+    <input matInput [value]="data.accountFrom" [placeholder]="'transfer.form.fromAccount' | translate" readonly>
+  </mat-form-field>
+  <mat-form-field class="field">
+    <input matInput [value]="data.accountTo" [placeholder]="'transfer.form.toAccount' | translate" readonly>
+  </mat-form-field>
+  <mat-form-field class="field">
+    <input matInput
+           [value]="currentCurrency.currencySymbol + ' ' + data.amountCurrency.amount"
+           [placeholder]="'transfer.form.amount' | translate"
+           readonly>
+  </mat-form-field>
+</section>
+<div class="footer">
+  <button mat-flat-button (click)="close(dialogOptions.CONFIRM)">{{'dialog.confirm' | translate}}</button>
+  <button mat-button (click)="close(dialogOptions.CANCEL)">{{'dialog.cancel' | translate}}</button>
+</div>

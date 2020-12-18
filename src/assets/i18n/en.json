@@ -1,0 +1,24 @@
+{
+  "transfer": {
+    "form": {
+      "makeTransfer": "Make a Transfer",
+      "fromAccount": "FROM ACCOUNT",
+      "toAccount": "TO ACCOUNT",
+      "amount": "AMOUNT",
+      "submit": "SUBMIT"
+    },
+    "list": {
+      "recentTransactions": "Recent Transactions"
+    }
+  },
+  "errors": {
+    "required": "Field is required",
+    "bankBalanceOverdraft": "Balance overdraft",
+    "min": "Minimum transfer amount 0.01"
+  },
+  "dialog": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "transferPreview": "Transfer preview"
+  }
+}
