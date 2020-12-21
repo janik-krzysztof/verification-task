@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {SortOrder, TransactionFilter} from "../../../modules/transactions/models/transactions-filter.model";
 import {TransactionSort} from "./models/transaction-sort.model";
 import {SortTypeEnum} from "./models/enums/sort-type.enum";
@@ -9,7 +9,7 @@ import {TransactionSortFields} from "./models/enums/transaction-sort-fields.enum
   templateUrl: './transaction-filters.component.html',
   styleUrls: ['./transaction-filters.component.scss']
 })
-export class TransactionFiltersComponent implements OnInit {
+export class TransactionFiltersComponent {
   @Output() onFilter = new EventEmitter<TransactionFilter>();
   @Output() onSort = new EventEmitter<TransactionSort>();
 
@@ -18,11 +18,6 @@ export class TransactionFiltersComponent implements OnInit {
   sortTypeEnum = SortTypeEnum;
   sortingType: SortTypeEnum;
   sortingOrder = SortOrder.DESC;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   filterBy(search: string) {
     this.emitFilter({search})

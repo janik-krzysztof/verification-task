@@ -1,7 +1,7 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {TransactionItem} from "../../../modules/transactions/models/transaction-item.model";
 import {transition, trigger, useAnimation} from "@angular/animations";
-import {fadeInAnimation} from "../../../animations/animations";
+import {fadeInAnimation} from "../../animations/animations";
 
 @Component({
   selector: 'app-transactions-list',
@@ -17,5 +17,4 @@ import {fadeInAnimation} from "../../../animations/animations";
 })
 export class TransactionsListComponent {
   @Input() transactionItems: TransactionItem[];
-
 }

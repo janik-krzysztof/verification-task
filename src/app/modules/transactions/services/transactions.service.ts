@@ -7,7 +7,6 @@ import {TransactionItem} from "../models/transaction-item.model";
 import {TransactionFilter} from "../models/transactions-filter.model";
 import {CreditDebitIndicatorEnum} from "../enums/credit-debit-indicator.model";
 import {Transfer} from "../models/transfer.model";
-import * as moment from 'moment';
 
 @Injectable()
 export class TransactionsService {
@@ -17,20 +16,10 @@ export class TransactionsService {
   constructor(private httpClient: HttpClient) {
   }
 
-  loadTransactionList(filter: TransactionFilter): Observable<Transactions> {
+  loadTransactionList(): Observable<Transactions> {
     return this.getTransactionList()
       .pipe(
         map((transactions: Transactions) => this.parseDates(transactions)),
-        map((transactions: Transactions) => {
-          if (this.hasFilters(filter)) {
-            const filteredElements = transactions.data.filter(item => this.filterItem(item, filter));
-            return {
-              ...transactions,
-              data: filteredElements
-            }
-          }
-          return transactions;
-        })
       )
   }
 
@@ -70,10 +59,6 @@ export class TransactionsService {
     }
   }
 
-  private filterItem(item: TransactionItem, filter: TransactionFilter): boolean {
-    return item.merchant.name.toLocaleLowerCase().includes(filter.search.toLocaleLowerCase());
-  }
-
   private getTransactionList(): Observable<Transactions> {
     if (this.transactions) {
       return of(this.transactions)
@@ -86,9 +71,5 @@ export class TransactionsService {
       .pipe(
         tap(list => this.transactions = list),
       );
-  }
-
-  private hasFilters(filter: TransactionFilter): boolean {
-    return filter && !!filter.search;
   }
 }

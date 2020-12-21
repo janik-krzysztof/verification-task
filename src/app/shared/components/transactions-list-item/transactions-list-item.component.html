@@ -5,7 +5,7 @@
 
   <div class="content">
     <div class="col-date">
-      <span>{{transactionItem.dates.valueDate | date: 'MMM. dd'}}</span>
+      <span>{{transactionItem?.dates?.valueDate | localizedDate: 'MMM. dd'}}</span>
     </div>
     <div class="col-img">
       <ng-container *ngIf="transactionItem.merchant.name | hasImg; else emptyLogo">

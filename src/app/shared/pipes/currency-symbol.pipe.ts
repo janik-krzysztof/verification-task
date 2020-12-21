@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from "@angular/core";
-import {CurrencyCodeEnum} from "../../models/enums/currency-code.enum";
-import {CurrencySymbolEnum} from "../../models/enums/currency-symbol.enum";
+import {CurrencyCodeEnum} from "../enums/currency-code.enum";
+import {CurrencySymbolEnum} from "../enums/currency-symbol.enum";
 
 @Pipe({
   name: 'currencySymbol'

@@ -1,4 +1,4 @@
-import {CurrencyCodeEnum} from "../../../models/enums/currency-code.enum";
+import {CurrencyCodeEnum} from "../../../shared/enums/currency-code.enum";
 
 export class AmountCurrency {
   amount: number;

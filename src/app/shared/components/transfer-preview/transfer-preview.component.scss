@@ -9,7 +9,6 @@
   padding: 0 1rem;
   font-size: 18px;
   height: 42px;
-  color: $boxLabel;
 }
 
 .content {
@@ -17,6 +16,29 @@
   height: calc(100% - 170px)
 }
 
+.label {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: $boxLabel;
+}
+
 .field {
   width: 100%;
+}
+
+.button {
+  min-width: 88px;
+}
+
+.confirm-button {
+  background-color: $submitButtonBg;
+  color: $submitButton;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem;
 }

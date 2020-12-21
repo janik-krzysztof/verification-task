@@ -1,0 +1,38 @@
+{
+  "transfer": {
+    "form": {
+      "makeTransfer": "Wykonaj przelew",
+      "fromAccount": "NADAWCA",
+      "toAccount": "ODBIORCA",
+      "amount": "KWOTA",
+      "submit": "WYŚLIJ"
+    },
+    "list": {
+      "recentTransactions": "Ostatnie tranzakcje"
+    }
+  },
+  "errors": {
+    "required": "Pole jest wymagane",
+    "bankBalanceOverdraft": "Przekroczono saldo debetu",
+    "min": "Minimalna kwota przelewu wynosi 0.01"
+  },
+  "dialog": {
+    "confirm": "Potwierdź",
+    "cancel": "Anuluj",
+    "transferPreview": "Podgląd płatności"
+  },
+  "sort": {
+    "sorting": "sortowanie",
+    "sortBy": "Sortuj wg",
+    "date": "data",
+    "beneficiary": "beneficjant",
+    "amount": "kwota"
+  },
+  "filter": {
+    "search": "Szukaj..."
+  },
+  "languages": {
+    "pl": "pl",
+    "en": "en"
+  }
+}

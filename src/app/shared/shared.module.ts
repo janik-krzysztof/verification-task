@@ -13,6 +13,7 @@ import {CommonModule, DatePipe} from "@angular/common";
 import {TransactionFiltersComponent} from "./components/transaction-filters/transaction-filters.component";
 import {TransactionSortService} from "./components/transaction-filters/services/transaction-sort.service";
 import {TransactionFilterService} from "./components/transaction-filters/services/transaction-filter.service";
+import {LocalizedDatePipe} from "./pipes/localized-date.pipe";
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import {TransactionFilterService} from "./components/transaction-filters/service
     TransactionsListItemComponent,
     ImgPathPipe,
     HasImgPipe,
-    TransactionFiltersComponent
+    TransactionFiltersComponent,
+    LocalizedDatePipe
   ],
   declarations: [
     TransferPreviewComponent,
@@ -42,7 +44,8 @@ import {TransactionFilterService} from "./components/transaction-filters/service
     TransactionsListItemComponent,
     ImgPathPipe,
     HasImgPipe,
-    TransactionFiltersComponent
+    TransactionFiltersComponent,
+    LocalizedDatePipe
   ],
   providers: [
     TransactionSortService,

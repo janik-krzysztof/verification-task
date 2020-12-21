@@ -1,11 +1,10 @@
 import {Injectable} from "@angular/core";
 import {Transfer} from "../models/transfer.model";
 import {BehaviorSubject, Subject} from "rxjs";
-import {Currency} from "../../../models/currency.model";
-import {CurrencyCodeEnum} from "../../../models/enums/currency-code.enum";
-import {CurrencySymbolEnum} from "../../../models/enums/currency-symbol.enum";
+import {Currency} from "../models/currency.model";
 import {NumberUtils} from "../../../shared/utils/number.utils";
-import {FormGroup} from "@angular/forms";
+import {CurrencyCodeEnum} from "../../../shared/enums/currency-code.enum";
+import {CurrencySymbolEnum} from "../../../shared/enums/currency-symbol.enum";
 
 @Injectable()
 export class TransferService {

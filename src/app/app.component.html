@@ -1,6 +1,14 @@
 <div class="main-container">
   <div class="navbar">
     <img src="assets/logo.jpg" class="navbar__logo" alt="company-logo" aria-label="company-logo">
+    <div class="langs">
+      <span class="lang pl" (click)="setCurrentLanguage(languages.PL)" [class.checked]="isCheck(languages.PL)">
+        {{'languages.pl' | translate}}
+      </span>
+      <span class="lang en" (click)="setCurrentLanguage(languages.EN)" [class.checked]="isCheck(languages.EN)">
+       {{'languages.en' | translate}}
+      </span>
+    </div>
   </div>
   <div class="content-outlet">
     <router-outlet></router-outlet>

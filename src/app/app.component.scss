@@ -14,6 +14,7 @@
 .navbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: white;
   border-bottom: 3px solid $navbarBorder;
   width: 100%;
@@ -28,6 +29,24 @@
 
 .content-outlet {
   padding: 3rem 6rem;
+}
+
+.lang {
+  cursor: pointer;
+  transition: .2s all;
+}
+
+.lang:hover {
+  color: $submitButtonBg;
+}
+
+.pl {
+  margin-right: 1rem;
+}
+
+.checked {
+  font-family: Kanit-Medium;
+  color: $submitButtonBg;
 }
 
 @media screen and (max-width: $lg){

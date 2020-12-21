@@ -30,5 +30,9 @@
   },
   "filter": {
     "search": "Search by typing..."
+  },
+  "languages": {
+    "pl": "pl",
+    "en": "en"
   }
 }

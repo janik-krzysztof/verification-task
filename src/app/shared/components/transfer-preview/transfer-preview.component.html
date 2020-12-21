@@ -1,6 +1,6 @@
 <header class="header">
-  <img src="assets/icons/arrows.png" alt="arrows">
-  <span>{{'dialog.transferPreview' | translate}}</span>
+  <img src="assets/icons/arrows.png" alt="arrows" class="icon">
+  <span class="label">{{'dialog.transferPreview' | translate}}</span>
 </header>
 <section class="content">
   <mat-form-field class="field">
@@ -17,6 +17,6 @@
   </mat-form-field>
 </section>
 <div class="footer">
-  <button mat-flat-button (click)="close(dialogOptions.CONFIRM)">{{'dialog.confirm' | translate}}</button>
-  <button mat-button (click)="close(dialogOptions.CANCEL)">{{'dialog.cancel' | translate}}</button>
+  <button mat-flat-button (click)="close(dialogOptions.CONFIRM)" class="button confirm-button">{{'dialog.confirm' | translate}}</button>
+  <button mat-button (click)="close(dialogOptions.CANCEL)" class="button">{{'dialog.cancel' | translate}}</button>
 </div>

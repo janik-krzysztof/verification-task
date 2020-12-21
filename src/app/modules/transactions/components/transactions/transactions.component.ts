@@ -6,13 +6,15 @@ import {TransferService} from "../../services/transfer.service";
 import {TransactionSort} from "../../../../shared/components/transaction-filters/models/transaction-sort.model";
 import {TransactionSortService} from "../../../../shared/components/transaction-filters/services/transaction-sort.service";
 import {TransactionFilterService} from "../../../../shared/components/transaction-filters/services/transaction-filter.service";
+import {BaseComponent} from "../../../../shared/abstract/base.component";
+import {takeUntil} from "rxjs/operators";
 
 @Component({
   selector: 'app-transactions',
   templateUrl: './transactions.component.html',
   styleUrls: ['./transactions.component.scss']
 })
-export class TransactionsComponent implements OnInit {
+export class TransactionsComponent extends BaseComponent implements OnInit {
   private transactions: Transactions;
   filteredTransactions: Transactions
 
@@ -20,6 +22,7 @@ export class TransactionsComponent implements OnInit {
               private transferService: TransferService,
               private transactionSortService: TransactionSortService,
               private transactionFilterService: TransactionFilterService) {
+    super();
   }
 
   ngOnInit(): void {
@@ -36,9 +39,10 @@ export class TransactionsComponent implements OnInit {
     this.transactions.data = this.transactionSortService.sortTransactions(this.transactions.data, sort);
   }
 
-  private getTransactions(filter?: TransactionFilter): void {
+  private getTransactions(): void {
     this.transactionsService
-      .loadTransactionList(filter)
+      .loadTransactionList()
+      .pipe(takeUntil(this.destroySubject))
       .subscribe(list => {
         this.transactions = list;
         this.filteredTransactions = Object.assign({}, this.transactions);
@@ -47,7 +51,7 @@ export class TransactionsComponent implements OnInit {
 
   private transfersListener() {
     this.transferService.transfer$
-      // .pipe(takeUntil(this.destroySubject))
+      .pipe(takeUntil(this.destroySubject))
       .subscribe(transfer => this.transactionsService.addTransaction(this.transactions, transfer))
   }
 }
