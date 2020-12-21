@@ -1,4 +1,4 @@
-export enum CreditDebitIndicator {
+export enum CreditDebitIndicatorEnum {
   DBIT = 'DBIT',
   CRDT = 'CRDT'
 }

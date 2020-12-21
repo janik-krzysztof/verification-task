@@ -11,8 +11,11 @@
       <img src="assets/icons/briefcase.png" alt="arrows">
       <span class="form-navbar__label">{{'transfer.list.recentTransactions' | translate}}</span>
     </div>
+    <div class="filters-container">
+      <app-transaction-filters (onFilter)="onFilter($event)" (onSort)="onSort($event)"></app-transaction-filters>
+    </div>
     <div class="list-container">
-      <app-transactions-list [transactionItems]="transactions?.data"></app-transactions-list>
+      <app-transactions-list [transactionItems]="filteredTransactions?.data"></app-transactions-list>
     </div>
   </div>
 </div>

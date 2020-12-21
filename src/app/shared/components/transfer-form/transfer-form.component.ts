@@ -38,7 +38,7 @@ export class TransferFormComponent implements OnInit {
       }),
       accountTo: ['', Validators.required],
       amountCurrency: this.fb.group({
-        amount: ['', [
+        amount: ['0.00', [
           Validators.required,
           Validators.min(0.01),
           TransferValidatorsService.maxAmountValidator(() => this.transferService.bankBalance, this.transferService.overdraftLimit),
@@ -61,8 +61,21 @@ export class TransferFormComponent implements OnInit {
     }
   }
 
-  getFormControl(name: string): AbstractControl {
-    return this.fg.get(name);
+  getFormControl(controlName: string, groupName?: string): AbstractControl {
+    if (groupName) {
+      return this.fg.get(groupName).get(controlName);
+    } else {
+      return this.fg.get(controlName);
+    }
+  }
+
+  clearInput(control: AbstractControl) {
+    control.setValue(null);
+  }
+
+  parseCurrency(event: any) {
+    const value: number = parseFloat(event.target.value);
+    this.getFormControl('amount','amountCurrency').setValue(Number(value).toFixed(2));
   }
 
   private formatCurrencyAmount() {
@@ -79,7 +92,7 @@ export class TransferFormComponent implements OnInit {
       });
   }
 
-  getInitValueForFromAccount(): string {
+  private getInitValueForFromAccount(): string {
     const currencySymbol: CurrencySymbolEnum = this.currentCurrency.currencySymbol;
     const bankBalance: number = this.transferService.bankBalance;
 
@@ -98,6 +111,6 @@ export class TransferFormComponent implements OnInit {
   private clearForm() {
     this.myNgForm.resetForm();
     this.getFormControl('accountFrom').setValue(this.getInitValueForFromAccount());
-    this.getFormControl('amountCurrency').get('amount').setValue(0);
+    this.getFormControl('amount','amountCurrency').setValue('0.00');
   }
 }

@@ -9,7 +9,10 @@ import {TransactionsListItemComponent} from "./components/transactions-list-item
 import {TransactionsListComponent} from "./components/transactions-list/transactions-list.component";
 import {ImgPathPipe} from "../modules/transactions/pipes/img-path.pipe";
 import {HasImgPipe} from "../modules/transactions/pipes/has-img.pipe";
-import {CommonModule} from "@angular/common";
+import {CommonModule, DatePipe} from "@angular/common";
+import {TransactionFiltersComponent} from "./components/transaction-filters/transaction-filters.component";
+import {TransactionSortService} from "./components/transaction-filters/services/transaction-sort.service";
+import {TransactionFilterService} from "./components/transaction-filters/services/transaction-filter.service";
 
 @NgModule({
   imports: [
@@ -27,7 +30,8 @@ import {CommonModule} from "@angular/common";
     TransactionsListComponent,
     TransactionsListItemComponent,
     ImgPathPipe,
-    HasImgPipe
+    HasImgPipe,
+    TransactionFiltersComponent
   ],
   declarations: [
     TransferPreviewComponent,
@@ -37,9 +41,14 @@ import {CommonModule} from "@angular/common";
     TransactionsListComponent,
     TransactionsListItemComponent,
     ImgPathPipe,
-    HasImgPipe
+    HasImgPipe,
+    TransactionFiltersComponent
   ],
-  providers: [],
+  providers: [
+    TransactionSortService,
+    TransactionFilterService,
+    DatePipe
+  ],
   entryComponents: [TransferPreviewComponent]
 })
 export class SharedModule {

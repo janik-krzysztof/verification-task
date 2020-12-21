@@ -26,3 +26,11 @@ body { margin: 0; font-family: Kanit-Light, "Helvetica Neue", sans-serif; }
 .mat-dialog-container {
   padding: 0 !important;
 }
+
+.mat-button-toggle-group-appearance-standard {
+  border-radius: 0 !important;
+}
+
+.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+  padding: 0 20px !important;
+}

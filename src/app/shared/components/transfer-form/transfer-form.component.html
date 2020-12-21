@@ -5,7 +5,15 @@
   </mat-form-field>
   <mat-label class="form__label">{{'transfer.form.toAccount' | translate}}</mat-label>
   <mat-form-field>
-    <input matInput placeholder="" formControlName="accountTo">
+    <input matInput placeholder="" #toAccount formControlName="accountTo">
+    <button mat-button
+            *ngIf="toAccount.value"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="clearInput(getFormControl('accountTo'))">
+      <mat-icon>close</mat-icon>
+    </button>
     <mat-error *ngIf="getFormControl('accountTo').errors">
       {{getFormControl('accountTo').errors | formError}}
     </mat-error>
@@ -15,10 +23,20 @@
     <mat-form-field>
       <span matPrefix>{{currentCurrency?.currencySymbol}} &nbsp;</span>
       <input matInput
+             #amount
              placeholder=""
-             formControlName="amount">
-      <mat-error *ngIf="getFormControl('amountCurrency').get('amount').errors">
-        {{getFormControl('amountCurrency').get('amount').errors | formError}}
+             formControlName="amount"
+      (focusout)="parseCurrency($event)">
+      <button mat-button
+              *ngIf="amount.value"
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="clearInput(getFormControl('amount','amountCurrency'))">
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-error *ngIf="getFormControl('amount','amountCurrency').errors">
+        {{getFormControl('amount','amountCurrency').errors | formError}}
       </mat-error>
     </mat-form-field>
   </ng-container>

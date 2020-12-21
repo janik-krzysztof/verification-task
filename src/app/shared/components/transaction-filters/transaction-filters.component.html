@@ -1,0 +1,30 @@
+<div class="container">
+  <mat-form-field class="search-container">
+    <input matInput #search [placeholder]="'filter.search' | translate" (input)="filterBy(search.value)">
+  </mat-form-field>
+
+  <div class="sort-container">
+    <span class="sort-label">{{'sort.sortBy' | translate}}</span>
+
+    <mat-button-toggle-group name="fontStyle" aria-label="sorting">
+      <mat-button-toggle value="date" (click)="sortBy(sortTypeEnum.DATE)">
+        {{'sort.date' | translate | uppercase}}
+        <span class="material-icons" *ngIf="showSortBy(sortTypeEnum.DATE)" [class.rotate180]="isSortingOrderAscending()">
+          arrow_drop_down
+        </span>
+      </mat-button-toggle>
+      <mat-button-toggle value="beneficiary" (click)="sortBy(sortTypeEnum.TEXT)">
+        {{'sort.beneficiary' | translate | uppercase}}
+        <span class="material-icons" *ngIf="showSortBy(sortTypeEnum.TEXT)" [class.rotate180]="isSortingOrderAscending()">
+          arrow_drop_down
+        </span>
+      </mat-button-toggle>
+      <mat-button-toggle value="amount" (click)="sortBy(sortTypeEnum.NUMBER)">
+        {{'sort.amount' | translate | uppercase}}
+        <span class="material-icons" *ngIf="showSortBy(sortTypeEnum.NUMBER)" [class.rotate180]="isSortingOrderAscending()">
+          arrow_drop_down
+        </span>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</div>

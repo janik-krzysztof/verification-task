@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {map, tap} from "rxjs/operators";
 import {TransactionItem} from "../models/transaction-item.model";
 import {TransactionFilter} from "../models/transactions-filter.model";
-import {CreditDebitIndicator} from "../enums/credit-debit-indicator.model";
+import {CreditDebitIndicatorEnum} from "../enums/credit-debit-indicator.model";
 import {Transfer} from "../models/transfer.model";
 import * as moment from 'moment';
 
@@ -14,11 +14,13 @@ export class TransactionsService {
   private readonly GET_TRANSACTION_LIST = () => `assets/mock/transactions.json`;
   private transactions: Transactions;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   loadTransactionList(filter: TransactionFilter): Observable<Transactions> {
     return this.getTransactionList()
       .pipe(
+        map((transactions: Transactions) => this.parseDates(transactions)),
         map((transactions: Transactions) => {
           if (this.hasFilters(filter)) {
             const filteredElements = transactions.data.filter(item => this.filterItem(item, filter));
@@ -40,7 +42,7 @@ export class TransactionsService {
     return {
       categoryCode: '#919191',
       dates: {
-        valueDate: moment()
+        valueDate: new Date()
       },
       merchant: {
         accountNumber: '827432874283749823749',
@@ -48,12 +50,25 @@ export class TransactionsService {
       },
       transaction: {
         amountCurrency: transfer.amountCurrency,
-        creditDebitIndicator: CreditDebitIndicator.DBIT,
+        creditDebitIndicator: CreditDebitIndicatorEnum.DBIT,
         type: 'Online transfer'
       }
     }
   }
 
+  private parseDates(transactions: Transactions): Transactions {
+    return {
+      ...transactions,
+      data: transactions.data.map((t: TransactionItem) => {
+        return {
+          ...t,
+          dates: {
+            valueDate: new Date(t.dates.valueDate)
+          }
+        } as TransactionItem
+      })
+    }
+  }
 
   private filterItem(item: TransactionItem, filter: TransactionFilter): boolean {
     return item.merchant.name.toLocaleLowerCase().includes(filter.search.toLocaleLowerCase());

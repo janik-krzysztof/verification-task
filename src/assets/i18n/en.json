@@ -20,5 +20,15 @@
     "confirm": "Confirm",
     "cancel": "Cancel",
     "transferPreview": "Transfer preview"
+  },
+  "sort": {
+    "sorting": "sorting",
+    "sortBy": "Sort by",
+    "date": "date",
+    "beneficiary": "beneficiary",
+    "amount": "amount"
+  },
+  "filter": {
+    "search": "Search by typing..."
   }
 }

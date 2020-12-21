@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-container {
+  width: calc(100% - 470px);
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 470px;
+}
+
+.sort-label {
+  margin: 0 2rem;
+  font-family: Kanit-Medium;
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}
+
