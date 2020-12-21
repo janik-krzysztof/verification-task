@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TransactionFiltersComponent } from './transaction-filters.component';
+import {TranslateModule} from "@ngx-translate/core";
 
 describe('TransactionFiltersComponent', () => {
   let component: TransactionFiltersComponent;
@@ -8,7 +9,10 @@ describe('TransactionFiltersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TransactionFiltersComponent ]
+      declarations: [ TransactionFiltersComponent ],
+      imports: [
+        TranslateModule.forRoot(),
+      ]
     })
     .compileComponents();
   }));

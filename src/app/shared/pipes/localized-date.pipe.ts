@@ -1,6 +1,7 @@
 import {Pipe, PipeTransform} from "@angular/core";
 import {DatePipe} from "@angular/common";
 import {TranslateService} from "@ngx-translate/core";
+import {LangEnum} from "../../core/enums/lang.enum";
 
 @Pipe({
   name: 'localizedDate',
@@ -10,7 +11,10 @@ export class LocalizedDatePipe implements PipeTransform {
   constructor(private translateService: TranslateService) {
   }
 
-  transform(value: any, pattern: string = 'mediumDate'): string {
-    return (new DatePipe(this.translateService.currentLang)).transform(value, pattern);
+  transform(value: Date, pattern: string = 'mediumDate'): string {
+    if (value) {
+      const currentLang = this.translateService.currentLang ? this.translateService.currentLang : LangEnum.EN;
+      return (new DatePipe(currentLang)).transform(value, pattern);
+    }
   }
 }

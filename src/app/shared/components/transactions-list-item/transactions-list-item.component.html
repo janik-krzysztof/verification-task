@@ -21,7 +21,7 @@
         <span class="col-merchant__type">{{transactionItem.transaction.type}}</span>
       </div>
       <div class="col-amount">
-        -{{transactionItem.transaction.amountCurrency.amount | currency: (transactionItem.transaction.amountCurrency.currencyCode | currencySymbol)}}
+        -{{transactionItem.transaction.amountCurrency.amount | currency: (transactionItem?.transaction?.amountCurrency?.currencyCode | currencySymbol)}}
       </div>
     </div>
   </div>

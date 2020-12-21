@@ -13,6 +13,8 @@ export class CurrencySymbolPipe implements PipeTransform {
         return CurrencySymbolEnum.USD
       case CurrencyCodeEnum.EUR:
         return CurrencySymbolEnum.EUR
+      default:
+        return null
     }
   }
 }
